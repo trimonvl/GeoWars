@@ -6,6 +6,7 @@
 package be.howest.groep12.geowars.gui;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -21,18 +22,21 @@ public class MenuInterface extends javax.swing.JPanel implements Observer {
     protected Container parent;
     protected CardLayout layout;
     protected Image background;
+    private SettingsModel settings;
     
     public MenuInterface(Container parent, CardLayout layout, SettingsModel settings) {
         this.parent = parent;
         this.layout = layout;
-        settings.addObserver(this);
+        this.settings = settings;
+        settings.addColorObserver(this);
         background = settings.getBackground();
     }
 
     @Override
     public void update(Observable o, Object arg) {
         SettingsModel setting = (SettingsModel) o;
-        this.setBackground(setting.getColor());
+        this.setForeground(setting.getTextColor());
+        this.setBackground(setting.getBackgroundColor());
         this.background = setting.getBackground();
     }
     

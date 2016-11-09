@@ -22,6 +22,7 @@ public class GameButton extends JButton implements Observer {
     
     public GameButton() {
         super();
+////        settings.addColorObserver(this);
         initStyle();
     }
     
@@ -29,15 +30,19 @@ public class GameButton extends JButton implements Observer {
     private void initStyle() {
         this.setOpaque(false);
         this.setContentAreaFilled(false);
-        this.setForeground(Color.white);
-        this.setBorder(new BasicBorders.ButtonBorder(Color.RED, Color.RED, Color.RED, Color.RED));
+//        this.setForeground(settings.getTextColor());
+//        Color border = settings.getBorderColor();
+//        this.setBorder(new BasicBorders.ButtonBorder(border, border, border, border));
         this.setBorderPainted(false);
         this.addMouseListener(new GameButtonMouseListener(this));      
     }
 
     @Override
     public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SettingsModel settings = (SettingsModel) o;
+        this.setForeground(settings.getTextColor());
+        Color border = settings.getBorderColor();
+        this.setBorder(new BasicBorders.ButtonBorder(border, border, border, border));
     }
     
     

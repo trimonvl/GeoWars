@@ -20,12 +20,6 @@ public class SettingsMenu extends MenuInterface {
 
     private SettingsModel settings;
     
-    //TODO not appropriate here but we'll update this
-    //also check how we can implement the settings in the root pane ...
-    //and make the object load the data from there (buttons panels etc)
-    //nice extra if we could do this on runtime because now we need to restart.
-    private final Color[] colors = new Color[] { Color.BLUE, Color.RED, Color.YELLOW, Color.GREEN, Color.ORANGE };
-    
     /**
      * Creates new form SettingsMenu
      */
@@ -68,10 +62,11 @@ public class SettingsMenu extends MenuInterface {
 
         jLabel5.setText("Volume");
 
-        colorSlider.setMaximum(4);
-        colorSlider.setMinorTickSpacing(1);
+        colorSlider.setMajorTickSpacing(65025);
+        colorSlider.setMaximum(16581375);
+        colorSlider.setMinorTickSpacing(65025);
         colorSlider.setPaintTicks(true);
-        colorSlider.setValue(0);
+        colorSlider.setValue(settings.getTextColor().getRGB());
         colorSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 colorSliderStateChanged(evt);
@@ -98,7 +93,7 @@ public class SettingsMenu extends MenuInterface {
         volumeSlider.setMinorTickSpacing(5);
         volumeSlider.setPaintTicks(true);
         volumeSlider.setToolTipText("");
-        volumeSlider.setValue(settings.getVolume());
+        volumeSlider.setValue(settings.getMusicVolume());
         volumeSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 volumeSliderStateChanged(evt);
@@ -114,7 +109,7 @@ public class SettingsMenu extends MenuInterface {
             }
         });
 
-        colorPanel.setBackground(settings.getColor());
+        colorPanel.setBackground(settings.getBackgroundColor());
 
         javax.swing.GroupLayout colorPanelLayout = new javax.swing.GroupLayout(colorPanel);
         colorPanel.setLayout(colorPanelLayout);
@@ -206,13 +201,12 @@ public class SettingsMenu extends MenuInterface {
 
     private void colorSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_colorSliderStateChanged
         int colorVal = colorSlider.getValue();
-//        colorPanel.setBackground(colors[colorVal]);
-//        colorPanel.repaint();
-        settings.setColor(colors[colorVal]);
+        colorPanel.setBackground(new Color(colorVal));
+        settings.setBackgroundColor(new Color(colorVal));
     }//GEN-LAST:event_colorSliderStateChanged
 
     private void volumeSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_volumeSliderStateChanged
-        settings.setVolume(volumeSlider.getValue());
+        settings.setMusicVolume(volumeSlider.getValue());
     }//GEN-LAST:event_volumeSliderStateChanged
 
     private void musicToggleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_musicToggleStateChanged

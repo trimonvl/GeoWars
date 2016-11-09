@@ -56,7 +56,7 @@ public class GameInterface {
         SettingsModel settings = new SettingsModel();
         
         //add all the views we will have in the game
-        contentPane.add(new GamePanel(), "game");
+        contentPane.add(new GamePanel(settings), "game");
         contentPane.add(new TitleMenu(contentPane, layout, settings),"TitleMenu");
         contentPane.add(new SinglePlayerMenu(contentPane, layout, settings), "SinglePlayerMenu");
         contentPane.add(new MultiPlayerMenu(contentPane, layout, settings), "MultiPlayerMenu");

@@ -6,7 +6,6 @@
 package be.howest.groep12.geowars.gui.playscreen;
 
 import be.howest.groep12.geowars.gui.SettingsModel;
-import be.howest.groep12.geowars.model.Ship;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -18,7 +17,7 @@ import java.util.Observer;
  *
  * @author Jonas Lauwers
  */
-public class drawPanel extends javax.swing.JPanel implements Observer{
+public class drawPanel extends javax.swing.JPanel implements Observer {
     
     private Image background;
     private List<testActor> actors;
@@ -84,7 +83,6 @@ public class drawPanel extends javax.swing.JPanel implements Observer{
     public void update(Observable o, Object arg) {
         repaint();
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

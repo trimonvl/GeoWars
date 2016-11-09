@@ -5,24 +5,31 @@
  */
 package be.howest.groep12.geowars.gui.playscreen;
 
+import be.howest.groep12.geowars.gui.SettingsModel;
 import java.awt.CardLayout;
 import java.awt.Polygon;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
  * @author Jonas Lauwers
  */
-public class GamePanel extends javax.swing.JPanel {
+public class GamePanel extends javax.swing.JPanel implements Observer {
     
     private testActor game;
 
     /**
      * Creates new form GamePanel
      */
-    public GamePanel() {
+    public GamePanel(SettingsModel settings) {
         initGame();
         initComponents();
+        this.setBackground(settings.getBackgroundColor());
+        this.setForeground(settings.getTextColor());
+        settings.addColorObserver(this);
         drawPanel1.setGame(game.getDrawables(), game);
+        drawPanel1.setFocusable(true);
     }
     
     public void initGame(testActor game) {
@@ -115,21 +122,15 @@ public class GamePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void drawPanel1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_drawPanel1KeyPressed
-        
+
     }//GEN-LAST:event_drawPanel1KeyPressed
 
     private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_formKeyTyped
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        if(evt.getKeyCode() == evt.VK_DOWN) {
-            game.setX(game.getX()-1);
-        }
-        if(evt.getKeyCode() == evt.VK_UP) {
-            game.setX(game.getX()+1);
-        }
-        System.out.println("keypressed");
+
     }//GEN-LAST:event_formKeyPressed
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
@@ -149,4 +150,12 @@ public class GamePanel extends javax.swing.JPanel {
     private be.howest.groep12.geowars.gui.playscreen.drawPanel drawPanel1;
     private be.howest.groep12.geowars.gui.GameButton gameButton1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+        SettingsModel setting = (SettingsModel) o;
+        this.setBackground(setting.getBackgroundColor());
+        this.setForeground(setting.getTextColor());
+        
+    }
 }
