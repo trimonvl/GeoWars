@@ -7,6 +7,8 @@ package be.howest.groep12.geowars.gui;
 
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicBorders;
 
@@ -16,7 +18,7 @@ import javax.swing.plaf.basic.BasicBorders;
  */
 //TODO extend jbutton and restyle ... nicer to scale and make button layout.
 //!!!! should read color stuff from the settings and there we need to have better themeing!!!!!
-public class GameButton extends JButton {
+public class GameButton extends JButton implements Observer {
     
     public GameButton() {
         super();
@@ -25,11 +27,17 @@ public class GameButton extends JButton {
     
     //place default styling for the button here.
     private void initStyle() {
-        this.setBackground(Color.blue);
+        this.setOpaque(false);
+        this.setContentAreaFilled(false);
         this.setForeground(Color.white);
-        this.setBorder(new BasicBorders.ButtonBorder(Color.CYAN, Color.CYAN, Color.BLUE, Color.BLUE));
+        this.setBorder(new BasicBorders.ButtonBorder(Color.RED, Color.RED, Color.RED, Color.RED));
         this.setBorderPainted(false);
         this.addMouseListener(new GameButtonMouseListener(this));      
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
@@ -42,12 +50,10 @@ public class GameButton extends JButton {
         }
         
         public void mouseEntered(java.awt.event.MouseEvent evt) {
-            caller.setBackground(Color.red);
             caller.setBorderPainted(true);
         }
         
         public void mouseExited(java.awt.event.MouseEvent evt) {
-            caller.setBackground(Color.blue);
             caller.setBorderPainted(false);
         }
     }
