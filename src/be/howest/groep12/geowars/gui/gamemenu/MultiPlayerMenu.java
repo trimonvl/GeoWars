@@ -5,6 +5,8 @@
  */
 package be.howest.groep12.geowars.gui.gamemenu;
 
+import be.howest.groep12.geowars.gui.MenuInterface;
+import be.howest.groep12.geowars.gui.Settings;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -12,17 +14,13 @@ import java.awt.Container;
  *
  * @author Jonas Lauwers
  */
-public class MultiPlayerMenu extends javax.swing.JPanel {
-
-    private Container parent;
-    private CardLayout layout;
+public class MultiPlayerMenu extends MenuInterface {
     
     /**
      * Creates new form MultiPlayerMenu
      */
-    public MultiPlayerMenu(Container parent, CardLayout layout) {
-        this.parent = parent;
-        this.layout = layout;
+    public MultiPlayerMenu(Container parent, CardLayout layout, Settings settings) {
+        super(parent, layout, settings);
         initComponents();
     }
 
@@ -36,9 +34,9 @@ public class MultiPlayerMenu extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        coopButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        leaderboardButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        backButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
+        coopButton = new be.howest.groep12.geowars.gui.GameButton();
+        leaderboardButton = new be.howest.groep12.geowars.gui.GameButton();
+        backButton = new be.howest.groep12.geowars.gui.GameButton();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ONLINE");
@@ -110,9 +108,9 @@ public class MultiPlayerMenu extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton backButton;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton coopButton;
+    private be.howest.groep12.geowars.gui.GameButton backButton;
+    private be.howest.groep12.geowars.gui.GameButton coopButton;
     private javax.swing.JLabel jLabel1;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton leaderboardButton;
+    private be.howest.groep12.geowars.gui.GameButton leaderboardButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -31,9 +31,6 @@ import javax.swing.*;
 //      the contentpane.... and added in the preparingInteface method.
 public class GameInterface {
     
-    private Container contentPane;
-    private CardLayout layout;
-    
     public GameInterface() {
         prepareInterface();
     }
@@ -56,16 +53,17 @@ public class GameInterface {
         root.setVisible(true);
         
         //set the contentpane and it's layout
-        contentPane = root.getContentPane();
-        layout = new CardLayout();
+        Container contentPane = root.getContentPane();
+        CardLayout layout = new CardLayout();
         contentPane.setLayout(layout);
+        Settings settings = new Settings();
         
         //add all the views we will have in the game.
-        contentPane.add(new TitleMenu(contentPane, layout),"TitleMenu");
-        contentPane.add(new SinglePlayerMenu(contentPane, layout), "SinglePlayerMenu");
-        contentPane.add(new MultiPlayerMenu(contentPane, layout), "MultiPlayerMenu");
-        contentPane.add(new CampaignMenu(contentPane, layout), "CampaignMenu");
-        contentPane.add(new SettingsMenu(contentPane, layout), "SettingsMenu");
+        contentPane.add(new TitleMenu(contentPane, layout, settings),"TitleMenu");
+        contentPane.add(new SinglePlayerMenu(contentPane, layout, settings), "SinglePlayerMenu");
+        contentPane.add(new MultiPlayerMenu(contentPane, layout, settings), "MultiPlayerMenu");
+        contentPane.add(new CampaignMenu(contentPane, layout, settings), "CampaignMenu");
+        contentPane.add(new SettingsMenu(contentPane, layout, settings), "SettingsMenu");
         
         //display default view.
         layout.show(contentPane, "LoginMenu");

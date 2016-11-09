@@ -5,22 +5,25 @@
  */
 package be.howest.groep12.geowars.gui;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Observable;
 import java.util.Scanner;
 
 /**
  *
  * @author Jonas Lauwers
  */
-public class Settings {
+public class Settings extends Observable {
     
     private final String SETTINGSDIR = "data/settings";
     private final String SETTINGSFILE = "settings.txt";
+    
     // figure out what we'll use on the color slider...
-    private int color;
+    private Color color;
     private boolean musicOn;
     private boolean sfxOn;
     private int volume;
@@ -29,11 +32,11 @@ public class Settings {
         musicOn = true;
         sfxOn = true;
         volume = 80;
-        color = 0;
+        color = Color.white;
         loadSettings();
     }
     
-    public int getColor() {
+    public Color getColor() {
         return color;
     }
     
@@ -49,8 +52,10 @@ public class Settings {
         return volume;
     }
     
-    public void setColor(int color) {
+    public void setColor(Color color) {
         this.color = color;
+        this.setChanged();
+        this.notifyObservers();
     }
     
     public void setMusicOn(boolean isOn) {
@@ -71,8 +76,8 @@ public class Settings {
             while(s.hasNext()) {
                 String[] settingLine = s.nextLine().split("=");
                 switch(settingLine[0]) {
-                    case "color": 
-                        setColor(Integer.parseInt(settingLine[1]));
+                    case "color":
+                        setColor(new Color(Integer.parseInt(settingLine[1])));
                         break;
                     case "musicOn":
                         setMusicOn(Boolean.parseBoolean(settingLine[1]));
@@ -96,7 +101,7 @@ public class Settings {
     //TODO see loadSettings if changed to json then update this :)
     public void saveSettings() {
         try (FileWriter fw = new FileWriter(new File(SETTINGSDIR, SETTINGSFILE))) {
-            fw.write(String.format("color=%s\n", getColor()));
+            fw.write(String.format("color=%d\n", getColor().getRGB()));
             fw.write(String.format("musicOn=%b\n", getMusicOn()));
             fw.write(String.format("sfxOn=%b\n", getSfxOn()));
             fw.write(String.format("volume=%d\n", getVolume()));

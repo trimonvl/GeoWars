@@ -5,6 +5,8 @@
  */
 package be.howest.groep12.geowars.gui.gamemenu;
 
+import be.howest.groep12.geowars.gui.MenuInterface;
+import be.howest.groep12.geowars.gui.Settings;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -12,18 +14,14 @@ import java.awt.Container;
  *
  * @author Jonas Lauwers
  */
-public class SinglePlayerMenu extends javax.swing.JPanel {
-
-    private Container parent;
-    private CardLayout layout;
+public class SinglePlayerMenu extends MenuInterface {
     
     
     /**
      * Creates new form SinglePlayerMenu
      */
-    public SinglePlayerMenu(Container parent, CardLayout layout) {
-        this.parent = parent;
-        this.layout = layout;
+    public SinglePlayerMenu(Container parent, CardLayout layout, Settings settings) {
+        super(parent, layout, settings);
         initComponents();
     }
 
@@ -36,10 +34,10 @@ public class SinglePlayerMenu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        campaignButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        arcadeButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        highscoresButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        backButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
+        campaignButton = new be.howest.groep12.geowars.gui.GameButton();
+        arcadeButton = new be.howest.groep12.geowars.gui.GameButton();
+        highscoresButton = new be.howest.groep12.geowars.gui.GameButton();
+        backButton = new be.howest.groep12.geowars.gui.GameButton();
         jLabel1 = new javax.swing.JLabel();
 
         campaignButton.setText("Campaign");
@@ -128,10 +126,10 @@ public class SinglePlayerMenu extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton arcadeButton;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton backButton;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton campaignButton;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton highscoresButton;
+    private be.howest.groep12.geowars.gui.GameButton arcadeButton;
+    private be.howest.groep12.geowars.gui.GameButton backButton;
+    private be.howest.groep12.geowars.gui.GameButton campaignButton;
+    private be.howest.groep12.geowars.gui.GameButton highscoresButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

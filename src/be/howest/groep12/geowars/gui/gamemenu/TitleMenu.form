@@ -72,7 +72,7 @@
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.gamemenu.GameMenuButton" name="singlePlayerButton">
+    <Component class="be.howest.groep12.geowars.gui.GameButton" name="singlePlayerButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Singleplayer"/>
       </Properties>
@@ -80,7 +80,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="singlePlayerButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.gamemenu.GameMenuButton" name="multiPlayerButton">
+    <Component class="be.howest.groep12.geowars.gui.GameButton" name="multiPlayerButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Multiplayer"/>
       </Properties>
@@ -88,7 +88,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multiPlayerButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.gamemenu.GameMenuButton" name="SettingsButton">
+    <Component class="be.howest.groep12.geowars.gui.GameButton" name="SettingsButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Options"/>
       </Properties>

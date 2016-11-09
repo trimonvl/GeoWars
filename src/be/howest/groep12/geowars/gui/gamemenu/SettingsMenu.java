@@ -5,6 +5,7 @@
  */
 package be.howest.groep12.geowars.gui.gamemenu;
 
+import be.howest.groep12.geowars.gui.MenuInterface;
 import be.howest.groep12.geowars.gui.Settings;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -15,10 +16,8 @@ import javax.swing.JToggleButton;
  *
  * @author Jonas Lauwers
  */
-public class SettingsMenu extends javax.swing.JPanel {
+public class SettingsMenu extends MenuInterface {
 
-    private Container parent;
-    private CardLayout layout;
     private Settings settings;
     
     //TODO not appropriate here but we'll update this
@@ -30,12 +29,10 @@ public class SettingsMenu extends javax.swing.JPanel {
     /**
      * Creates new form SettingsMenu
      */
-    public SettingsMenu(Container parent, CardLayout layout) {
-        this.parent = parent;
-        this.layout = layout;
-        this.settings = new Settings();
+    public SettingsMenu(Container parent, CardLayout layout, Settings settings) {
+        super(parent,layout, settings);
+        this.settings = settings;
         initComponents();
-        this.setBackground(colors[settings.getColor()]);
     }
 
     /**
@@ -56,8 +53,8 @@ public class SettingsMenu extends javax.swing.JPanel {
         musicToggle = new javax.swing.JToggleButton();
         sfxToggle = new javax.swing.JToggleButton();
         volumeSlider = new javax.swing.JSlider();
-        changeAccountButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        backButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
+        changeAccountButton = new be.howest.groep12.geowars.gui.GameButton();
+        backButton = new be.howest.groep12.geowars.gui.GameButton();
         colorPanel = new javax.swing.JPanel();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,7 +71,7 @@ public class SettingsMenu extends javax.swing.JPanel {
         colorSlider.setMaximum(4);
         colorSlider.setMinorTickSpacing(1);
         colorSlider.setPaintTicks(true);
-        colorSlider.setValue(settings.getColor());
+        colorSlider.setValue(0);
         colorSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 colorSliderStateChanged(evt);
@@ -117,7 +114,7 @@ public class SettingsMenu extends javax.swing.JPanel {
             }
         });
 
-        colorPanel.setBackground(colors[settings.getColor()]);
+        colorPanel.setBackground(settings.getColor());
 
         javax.swing.GroupLayout colorPanelLayout = new javax.swing.GroupLayout(colorPanel);
         colorPanel.setLayout(colorPanelLayout);
@@ -209,9 +206,9 @@ public class SettingsMenu extends javax.swing.JPanel {
 
     private void colorSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_colorSliderStateChanged
         int colorVal = colorSlider.getValue();
-        colorPanel.setBackground(colors[colorVal]);
-        colorPanel.repaint();
-        settings.setColor(colorVal);
+//        colorPanel.setBackground(colors[colorVal]);
+//        colorPanel.repaint();
+        settings.setColor(colors[colorVal]);
     }//GEN-LAST:event_colorSliderStateChanged
 
     private void volumeSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_volumeSliderStateChanged
@@ -233,8 +230,8 @@ public class SettingsMenu extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton backButton;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton changeAccountButton;
+    private be.howest.groep12.geowars.gui.GameButton backButton;
+    private be.howest.groep12.geowars.gui.GameButton changeAccountButton;
     private javax.swing.JPanel colorPanel;
     private javax.swing.JSlider colorSlider;
     private javax.swing.JLabel jLabel1;

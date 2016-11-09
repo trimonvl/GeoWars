@@ -5,6 +5,8 @@
  */
 package be.howest.groep12.geowars.gui.gamemenu;
 
+import be.howest.groep12.geowars.gui.MenuInterface;
+import be.howest.groep12.geowars.gui.Settings;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -12,17 +14,13 @@ import java.awt.Container;
  *
  * @author Jonas Lauwers
  */
-public class TitleMenu extends javax.swing.JPanel {
-
-    private Container parent;
-    private CardLayout layout;
+public class TitleMenu extends MenuInterface {
     
     /**
      * Creates new form TitleMenu
      */
-    public TitleMenu(Container parent, CardLayout layout) {
-        this.parent = parent;
-        this.layout = layout;
+    public TitleMenu(Container parent, CardLayout layout, Settings settings) {
+        super(parent, layout, settings);
         initComponents();
     }
 
@@ -36,9 +34,9 @@ public class TitleMenu extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        singlePlayerButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        multiPlayerButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
-        SettingsButton = new be.howest.groep12.geowars.gui.gamemenu.GameMenuButton();
+        singlePlayerButton = new be.howest.groep12.geowars.gui.GameButton();
+        multiPlayerButton = new be.howest.groep12.geowars.gui.GameButton();
+        SettingsButton = new be.howest.groep12.geowars.gui.GameButton();
         jLabel2 = new javax.swing.JLabel();
         userSettings = new javax.swing.JComboBox<>();
 
@@ -130,11 +128,11 @@ public class TitleMenu extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton SettingsButton;
+    private be.howest.groep12.geowars.gui.GameButton SettingsButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton multiPlayerButton;
-    private be.howest.groep12.geowars.gui.gamemenu.GameMenuButton singlePlayerButton;
+    private be.howest.groep12.geowars.gui.GameButton multiPlayerButton;
+    private be.howest.groep12.geowars.gui.GameButton singlePlayerButton;
     private javax.swing.JComboBox<String> userSettings;
     // End of variables declaration//GEN-END:variables
 }

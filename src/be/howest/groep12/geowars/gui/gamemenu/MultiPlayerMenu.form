@@ -58,7 +58,7 @@
         <Property name="text" type="java.lang.String" value="ONLINE"/>
       </Properties>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.gamemenu.GameMenuButton" name="coopButton">
+    <Component class="be.howest.groep12.geowars.gui.GameButton" name="coopButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Co-op"/>
       </Properties>
@@ -66,7 +66,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="coopButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.gamemenu.GameMenuButton" name="leaderboardButton">
+    <Component class="be.howest.groep12.geowars.gui.GameButton" name="leaderboardButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Leaderboards"/>
       </Properties>
@@ -74,7 +74,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="leaderboardButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.gamemenu.GameMenuButton" name="backButton">
+    <Component class="be.howest.groep12.geowars.gui.GameButton" name="backButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
