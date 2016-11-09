@@ -1,4 +1,0 @@
-color=1
-musicOn=false
-sfxOn=true
-volume=71
