@@ -10,6 +10,7 @@ import be.howest.groep12.geowars.gui.gamemenu.MultiPlayerMenu;
 import be.howest.groep12.geowars.gui.gamemenu.SettingsMenu;
 import be.howest.groep12.geowars.gui.gamemenu.SinglePlayerMenu;
 import be.howest.groep12.geowars.gui.gamemenu.TitleMenu;
+import be.howest.groep12.geowars.gui.playscreen.GamePanel;
 import java.awt.*;
 import javax.swing.*;
 
@@ -31,15 +32,11 @@ import javax.swing.*;
 //      the contentpane.... and added in the preparingInteface method.
 public class GameInterface {
     
-    public GameInterface() {
+    private SettingsModel settings;
+    
+    public GameInterface(SettingsModel settings) {
+        this.settings = settings;
         prepareInterface();
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        GameInterface gameInterface = new GameInterface();
     }
     
     private void prepareInterface() {
@@ -56,9 +53,10 @@ public class GameInterface {
         Container contentPane = root.getContentPane();
         CardLayout layout = new CardLayout();
         contentPane.setLayout(layout);
-        Settings settings = new Settings();
+        SettingsModel settings = new SettingsModel();
         
-        //add all the views we will have in the game.
+        //add all the views we will have in the game
+        contentPane.add(new GamePanel(), "game");
         contentPane.add(new TitleMenu(contentPane, layout, settings),"TitleMenu");
         contentPane.add(new SinglePlayerMenu(contentPane, layout, settings), "SinglePlayerMenu");
         contentPane.add(new MultiPlayerMenu(contentPane, layout, settings), "MultiPlayerMenu");
@@ -66,7 +64,8 @@ public class GameInterface {
         contentPane.add(new SettingsMenu(contentPane, layout, settings), "SettingsMenu");
         
         //display default view.
-        layout.show(contentPane, "LoginMenu");
+        layout.show(contentPane, "TitleMenu");
+        root.pack();
         contentPane.setVisible(true);
         
     }

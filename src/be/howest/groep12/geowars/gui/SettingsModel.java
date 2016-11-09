@@ -6,33 +6,45 @@
 package be.howest.groep12.geowars.gui;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author Jonas Lauwers
  */
-public class Settings extends Observable {
+//TODO split visual and audio settings in 2 parts..... 
+public class SettingsModel extends Observable {
     
     private final String SETTINGSDIR = "data/settings";
     private final String SETTINGSFILE = "settings.txt";
+    private final String DEFAULTBACKGROUND = "data/backgrounds/default.png";
     
     // figure out what we'll use on the color slider...
     private Color color;
     private boolean musicOn;
     private boolean sfxOn;
     private int volume;
+    private BufferedImage background;
     
-    public Settings() {
+    public SettingsModel() {
         musicOn = true;
         sfxOn = true;
         volume = 80;
         color = Color.white;
+        try {
+            background = ImageIO.read(new File(DEFAULTBACKGROUND));
+        }
+        catch (IOException e) {
+            System.err.println("No image found !!!");
+        }
         loadSettings();
     }
     
@@ -56,6 +68,10 @@ public class Settings extends Observable {
         this.color = color;
         this.setChanged();
         this.notifyObservers();
+    }
+    
+    public Image getBackground() {
+        return background;
     }
     
     public void setMusicOn(boolean isOn) {

@@ -6,7 +6,7 @@
 package be.howest.groep12.geowars.gui.gamemenu;
 
 import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.Settings;
+import be.howest.groep12.geowars.gui.SettingsModel;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -19,7 +19,7 @@ public class MultiPlayerMenu extends MenuInterface {
     /**
      * Creates new form MultiPlayerMenu
      */
-    public MultiPlayerMenu(Container parent, CardLayout layout, Settings settings) {
+    public MultiPlayerMenu(Container parent, CardLayout layout, SettingsModel settings) {
         super(parent, layout, settings);
         initComponents();
     }

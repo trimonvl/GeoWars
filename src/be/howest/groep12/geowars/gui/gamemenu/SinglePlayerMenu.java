@@ -6,7 +6,7 @@
 package be.howest.groep12.geowars.gui.gamemenu;
 
 import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.Settings;
+import be.howest.groep12.geowars.gui.SettingsModel;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -20,7 +20,7 @@ public class SinglePlayerMenu extends MenuInterface {
     /**
      * Creates new form SinglePlayerMenu
      */
-    public SinglePlayerMenu(Container parent, CardLayout layout, Settings settings) {
+    public SinglePlayerMenu(Container parent, CardLayout layout, SettingsModel settings) {
         super(parent, layout, settings);
         initComponents();
     }
@@ -109,7 +109,7 @@ public class SinglePlayerMenu extends MenuInterface {
     }// </editor-fold>//GEN-END:initComponents
 
     private void arcadeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcadeButtonActionPerformed
-        // TODO add your handling code here:
+        layout.show(parent, "game");
     }//GEN-LAST:event_arcadeButtonActionPerformed
 
     private void highscoresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoresButtonActionPerformed

@@ -6,7 +6,7 @@
 package be.howest.groep12.geowars.gui.gamemenu;
 
 import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.Settings;
+import be.howest.groep12.geowars.gui.SettingsModel;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -18,7 +18,7 @@ import javax.swing.JToggleButton;
  */
 public class SettingsMenu extends MenuInterface {
 
-    private Settings settings;
+    private SettingsModel settings;
     
     //TODO not appropriate here but we'll update this
     //also check how we can implement the settings in the root pane ...
@@ -29,7 +29,7 @@ public class SettingsMenu extends MenuInterface {
     /**
      * Creates new form SettingsMenu
      */
-    public SettingsMenu(Container parent, CardLayout layout, Settings settings) {
+    public SettingsMenu(Container parent, CardLayout layout, SettingsModel settings) {
         super(parent,layout, settings);
         this.settings = settings;
         initComponents();
