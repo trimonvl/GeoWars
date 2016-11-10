@@ -3,3 +3,7 @@
 /dist/
 build.xml
 manifest.mf
+/bin/
+
+*.classpath
+*.project
