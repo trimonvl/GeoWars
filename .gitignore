@@ -1,6 +1,9 @@
 /nbproject/
 /build/
 /dist/
-/data/
 build.xml
 manifest.mf
+/bin/
+
+*.classpath
+*.project
