@@ -1,0 +1,8 @@
+musicOn=true
+sfxOn=true
+musicvolume=80
+sfvvolume=0
+bordercolor=-65536
+textcolor=-1
+backgroundcolor=-6436143
+background=null
