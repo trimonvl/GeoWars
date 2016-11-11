@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.gamemenu;
+package be.howest.groep12.geowars.view.menu;
 
-import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.view.MenuInterface;
+import be.howest.groep12.geowars.Settings.SettingsModel;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -34,9 +34,9 @@ public class TitleMenu extends MenuInterface {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        singlePlayerButton = new be.howest.groep12.geowars.gui.GameButton();
-        multiPlayerButton = new be.howest.groep12.geowars.gui.GameButton();
-        SettingsButton = new be.howest.groep12.geowars.gui.GameButton();
+        singlePlayerButton = new be.howest.groep12.geowars.view.GameButton();
+        multiPlayerButton = new be.howest.groep12.geowars.view.GameButton();
+        SettingsButton = new be.howest.groep12.geowars.view.GameButton();
         jLabel2 = new javax.swing.JLabel();
         userSettings = new javax.swing.JComboBox<>();
 
@@ -128,11 +128,11 @@ public class TitleMenu extends MenuInterface {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.GameButton SettingsButton;
+    private be.howest.groep12.geowars.view.GameButton SettingsButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private be.howest.groep12.geowars.gui.GameButton multiPlayerButton;
-    private be.howest.groep12.geowars.gui.GameButton singlePlayerButton;
+    private be.howest.groep12.geowars.view.GameButton multiPlayerButton;
+    private be.howest.groep12.geowars.view.GameButton singlePlayerButton;
     private javax.swing.JComboBox<String> userSettings;
     // End of variables declaration//GEN-END:variables
 }

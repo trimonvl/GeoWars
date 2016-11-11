@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.gamemenu;
+package be.howest.groep12.geowars.view.menu;
 
-import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.view.MenuInterface;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -34,9 +34,9 @@ public class MultiPlayerMenu extends MenuInterface {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        coopButton = new be.howest.groep12.geowars.gui.GameButton();
-        leaderboardButton = new be.howest.groep12.geowars.gui.GameButton();
-        backButton = new be.howest.groep12.geowars.gui.GameButton();
+        coopButton = new be.howest.groep12.geowars.view.GameButton();
+        leaderboardButton = new be.howest.groep12.geowars.view.GameButton();
+        backButton = new be.howest.groep12.geowars.view.GameButton();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ONLINE");
@@ -108,9 +108,9 @@ public class MultiPlayerMenu extends MenuInterface {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.GameButton backButton;
-    private be.howest.groep12.geowars.gui.GameButton coopButton;
+    private be.howest.groep12.geowars.view.GameButton backButton;
+    private be.howest.groep12.geowars.view.GameButton coopButton;
     private javax.swing.JLabel jLabel1;
-    private be.howest.groep12.geowars.gui.GameButton leaderboardButton;
+    private be.howest.groep12.geowars.view.GameButton leaderboardButton;
     // End of variables declaration//GEN-END:variables
 }

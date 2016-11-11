@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui;
+package be.howest.groep12.geowars.view;
 
+import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.Settings.StyleSettings;
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -34,7 +35,7 @@ public class MenuInterface extends javax.swing.JPanel implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        SettingsModel setting = (SettingsModel) o;
+        StyleSettings setting = (StyleSettings) o;
         this.setForeground(setting.getTextColor());
         this.setBackground(setting.getBackgroundColor());
         this.background = setting.getBackground();

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.gamemenu;
+package be.howest.groep12.geowars.view.menu;
 
-import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.view.MenuInterface;
+import be.howest.groep12.geowars.Settings.SettingsModel;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -34,10 +34,10 @@ public class SinglePlayerMenu extends MenuInterface {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        campaignButton = new be.howest.groep12.geowars.gui.GameButton();
-        arcadeButton = new be.howest.groep12.geowars.gui.GameButton();
-        highscoresButton = new be.howest.groep12.geowars.gui.GameButton();
-        backButton = new be.howest.groep12.geowars.gui.GameButton();
+        campaignButton = new be.howest.groep12.geowars.view.GameButton();
+        arcadeButton = new be.howest.groep12.geowars.view.GameButton();
+        highscoresButton = new be.howest.groep12.geowars.view.GameButton();
+        backButton = new be.howest.groep12.geowars.view.GameButton();
         jLabel1 = new javax.swing.JLabel();
 
         campaignButton.setText("Campaign");
@@ -88,7 +88,7 @@ public class SinglePlayerMenu extends MenuInterface {
                 .addContainerGap(275, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(371, 371, 371))
         );
         layout.setVerticalGroup(
@@ -126,10 +126,10 @@ public class SinglePlayerMenu extends MenuInterface {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.GameButton arcadeButton;
-    private be.howest.groep12.geowars.gui.GameButton backButton;
-    private be.howest.groep12.geowars.gui.GameButton campaignButton;
-    private be.howest.groep12.geowars.gui.GameButton highscoresButton;
+    private be.howest.groep12.geowars.view.GameButton arcadeButton;
+    private be.howest.groep12.geowars.view.GameButton backButton;
+    private be.howest.groep12.geowars.view.GameButton campaignButton;
+    private be.howest.groep12.geowars.view.GameButton highscoresButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

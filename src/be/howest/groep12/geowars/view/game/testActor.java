@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.playscreen;
+package be.howest.groep12.geowars.view.game;
 
 import java.awt.Polygon;
 import java.util.ArrayList;

@@ -176,12 +176,12 @@
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="volumeSlider.setValue(settings.getMusicVolume());"/>
       </AuxValues>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.GameButton" name="changeAccountButton">
+    <Component class="be.howest.groep12.geowars.view.GameButton" name="changeAccountButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Change Account"/>
       </Properties>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.GameButton" name="backButton">
+    <Component class="be.howest.groep12.geowars.view.GameButton" name="backButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>

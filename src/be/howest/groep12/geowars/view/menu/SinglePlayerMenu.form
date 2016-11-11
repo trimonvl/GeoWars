@@ -28,7 +28,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="backButton" min="-2" pref="49" max="-2" attributes="0"/>
+              <Component id="backButton" min="-2" pref="66" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="371" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -52,7 +52,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="be.howest.groep12.geowars.gui.GameButton" name="campaignButton">
+    <Component class="be.howest.groep12.geowars.view.GameButton" name="campaignButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Campaign"/>
       </Properties>
@@ -60,7 +60,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campaignButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.GameButton" name="arcadeButton">
+    <Component class="be.howest.groep12.geowars.view.GameButton" name="arcadeButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Arcade"/>
       </Properties>
@@ -68,7 +68,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="arcadeButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.GameButton" name="highscoresButton">
+    <Component class="be.howest.groep12.geowars.view.GameButton" name="highscoresButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Highscores"/>
       </Properties>
@@ -76,7 +76,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="highscoresButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="be.howest.groep12.geowars.gui.GameButton" name="backButton">
+    <Component class="be.howest.groep12.geowars.view.GameButton" name="backButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>

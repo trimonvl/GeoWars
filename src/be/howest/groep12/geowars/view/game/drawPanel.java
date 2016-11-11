@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.playscreen;
+package be.howest.groep12.geowars.view.game;
 
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.Settings.SettingsModel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -27,7 +27,7 @@ public class drawPanel extends javax.swing.JPanel implements Observer {
      * Creates new form drawPanel
      */
     public drawPanel() {
-        SettingsModel settings = new SettingsModel();
+        SettingsModel settings = SettingsModel.getSettings();
         background = settings.getBackground();
         
         initComponents();

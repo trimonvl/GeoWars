@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.gamemenu;
+package be.howest.groep12.geowars.view.menu;
 
-import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.view.MenuInterface;
 import java.awt.CardLayout;
 import java.awt.Container;
 
@@ -34,9 +34,9 @@ public class CampaignMenu extends MenuInterface {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        loadGameButton = new be.howest.groep12.geowars.gui.GameButton();
-        newGameButton = new be.howest.groep12.geowars.gui.GameButton();
-        backButton = new be.howest.groep12.geowars.gui.GameButton();
+        loadGameButton = new be.howest.groep12.geowars.view.GameButton();
+        newGameButton = new be.howest.groep12.geowars.view.GameButton();
+        backButton = new be.howest.groep12.geowars.view.GameButton();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CAMPAIGN");
@@ -107,9 +107,9 @@ public class CampaignMenu extends MenuInterface {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.GameButton backButton;
+    private be.howest.groep12.geowars.view.GameButton backButton;
     private javax.swing.JLabel jLabel1;
-    private be.howest.groep12.geowars.gui.GameButton loadGameButton;
-    private be.howest.groep12.geowars.gui.GameButton newGameButton;
+    private be.howest.groep12.geowars.view.GameButton loadGameButton;
+    private be.howest.groep12.geowars.view.GameButton newGameButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -55,7 +55,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="be.howest.groep12.geowars.gui.playscreen.drawPanel" name="drawPanel1">
+    <Container class="be.howest.groep12.geowars.view.playscreen.drawPanel" name="drawPanel1">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -69,7 +69,7 @@
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="drawPanel1KeyPressed"/>
       </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new be.howest.groep12.geowars.gui.playscreen.drawPanel()"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new be.howest.groep12.geowars.view.playscreen.drawPanel()"/>
       </AuxValues>
 
       <Layout>
@@ -85,7 +85,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="be.howest.groep12.geowars.gui.GameButton" name="gameButton1">
+    <Component class="be.howest.groep12.geowars.view.GameButton" name="gameButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit game"/>
       </Properties>

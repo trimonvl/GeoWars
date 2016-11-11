@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui;
+package be.howest.groep12.geowars.view;
 
+import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.Settings.StyleSettings;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.util.Observable;
@@ -20,9 +22,11 @@ import javax.swing.plaf.basic.BasicBorders;
 //!!!! should read color stuff from the settings and there we need to have better themeing!!!!!
 public class GameButton extends JButton implements Observer {
     
+    SettingsModel settings = SettingsModel.getSettings();
+    
     public GameButton() {
         super();
-////        settings.addColorObserver(this);
+        settings.addColorObserver(this);
         initStyle();
     }
     
@@ -30,16 +34,16 @@ public class GameButton extends JButton implements Observer {
     private void initStyle() {
         this.setOpaque(false);
         this.setContentAreaFilled(false);
-//        this.setForeground(settings.getTextColor());
-//        Color border = settings.getBorderColor();
-//        this.setBorder(new BasicBorders.ButtonBorder(border, border, border, border));
+        this.setForeground(settings.getTextColor());
+        Color border = settings.getBorderColor();
+        this.setBorder(new BasicBorders.ButtonBorder(border, border, border, border));
         this.setBorderPainted(false);
         this.addMouseListener(new GameButtonMouseListener(this));      
     }
 
     @Override
     public void update(Observable o, Object arg) {
-        SettingsModel settings = (SettingsModel) o;
+        StyleSettings settings = (StyleSettings) o;
         this.setForeground(settings.getTextColor());
         Color border = settings.getBorderColor();
         this.setBorder(new BasicBorders.ButtonBorder(border, border, border, border));

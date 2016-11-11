@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.playscreen;
+package be.howest.groep12.geowars.view.game;
 
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.Settings.StyleSettings;
 import java.awt.CardLayout;
 import java.awt.Polygon;
 import java.util.Observable;
@@ -52,8 +53,8 @@ public class GamePanel extends javax.swing.JPanel implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        drawPanel1 = new be.howest.groep12.geowars.gui.playscreen.drawPanel();
-        gameButton1 = new be.howest.groep12.geowars.gui.GameButton();
+        drawPanel1 = new be.howest.groep12.geowars.view.game.drawPanel();
+        gameButton1 = new be.howest.groep12.geowars.view.GameButton();
 
         setBackground(new java.awt.Color(0, 0, 153));
         setFocusable(false);
@@ -147,13 +148,13 @@ public class GamePanel extends javax.swing.JPanel implements Observer {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.playscreen.drawPanel drawPanel1;
-    private be.howest.groep12.geowars.gui.GameButton gameButton1;
+    private be.howest.groep12.geowars.view.game.drawPanel drawPanel1;
+    private be.howest.groep12.geowars.view.GameButton gameButton1;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void update(Observable o, Object arg) {
-        SettingsModel setting = (SettingsModel) o;
+        StyleSettings setting = (StyleSettings) o;
         this.setBackground(setting.getBackgroundColor());
         this.setForeground(setting.getTextColor());
         

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui.gamemenu;
+package be.howest.groep12.geowars.view.menu;
 
-import be.howest.groep12.geowars.gui.MenuInterface;
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.view.MenuInterface;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -47,8 +47,8 @@ public class SettingsMenu extends MenuInterface {
         musicToggle = new javax.swing.JToggleButton();
         sfxToggle = new javax.swing.JToggleButton();
         volumeSlider = new javax.swing.JSlider();
-        changeAccountButton = new be.howest.groep12.geowars.gui.GameButton();
-        backButton = new be.howest.groep12.geowars.gui.GameButton();
+        changeAccountButton = new be.howest.groep12.geowars.view.GameButton();
+        backButton = new be.howest.groep12.geowars.view.GameButton();
         colorPanel = new javax.swing.JPanel();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -196,7 +196,6 @@ public class SettingsMenu extends MenuInterface {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         layout.show(parent, "TitleMenu");
-        settings.saveSettings();
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void colorSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_colorSliderStateChanged
@@ -224,8 +223,8 @@ public class SettingsMenu extends MenuInterface {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private be.howest.groep12.geowars.gui.GameButton backButton;
-    private be.howest.groep12.geowars.gui.GameButton changeAccountButton;
+    private be.howest.groep12.geowars.view.GameButton backButton;
+    private be.howest.groep12.geowars.view.GameButton changeAccountButton;
     private javax.swing.JPanel colorPanel;
     private javax.swing.JSlider colorSlider;
     private javax.swing.JLabel jLabel1;

@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package be.howest.groep12.geowars.main;
 
-import be.howest.groep12.geowars.gui.GameInterface;
-import be.howest.groep12.geowars.gui.SettingsModel;
+import be.howest.groep12.geowars.view.GameInterface;
+import be.howest.groep12.geowars.Settings.SettingsModel;
 
 /**
  *
@@ -19,14 +14,18 @@ public class GeowarsLoader {
     private static GeowarsLoader game;
 
     /**
+     * Loads and initializes the game completely.
+     * Takes no arguments.
+     * It starts with loading all the settings and components,
+     * then starts the view and manages the state of the game.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new GeowarsLoader();
+        game = new GeowarsLoader();
     }
     
     public GeowarsLoader() {
-        settings = new SettingsModel();
+        settings = SettingsModel.getSettings();
         mainFrame = new GameInterface(settings);
     }
     

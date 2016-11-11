@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.gui;
+package be.howest.groep12.geowars.view;
 
-import be.howest.groep12.geowars.gui.gamemenu.CampaignMenu;
-import be.howest.groep12.geowars.gui.gamemenu.MultiPlayerMenu;
-import be.howest.groep12.geowars.gui.gamemenu.SettingsMenu;
-import be.howest.groep12.geowars.gui.gamemenu.SinglePlayerMenu;
-import be.howest.groep12.geowars.gui.gamemenu.TitleMenu;
-import be.howest.groep12.geowars.gui.playscreen.GamePanel;
+import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.view.menu.CampaignMenu;
+import be.howest.groep12.geowars.view.menu.MultiPlayerMenu;
+import be.howest.groep12.geowars.view.menu.SettingsMenu;
+import be.howest.groep12.geowars.view.menu.SinglePlayerMenu;
+import be.howest.groep12.geowars.view.menu.TitleMenu;
+import be.howest.groep12.geowars.view.game.GamePanel;
 import java.awt.*;
 import javax.swing.*;
 
@@ -53,7 +54,6 @@ public class GameInterface {
         Container contentPane = root.getContentPane();
         CardLayout layout = new CardLayout();
         contentPane.setLayout(layout);
-        SettingsModel settings = new SettingsModel();
         
         //add all the views we will have in the game
         contentPane.add(new GamePanel(settings), "game");
