@@ -1,14 +1,16 @@
-import static org.junit.Assert.*;
+package be.howest.groep12.geowars.model;
 
+import static org.junit.Assert.*;
 import org.junit.Test;
 
-import be.howest.groep12.geowars.model.Ship;
 
 public class ShipTest {
-
+        
+        private Ship ship = new Ship(10,10);
+    
 	@Test
 	public void setGetShip() {
-		Ship ship = new Ship(10,10);
+		ship = new Ship(10,10);
 		ship.setxPos(5);
 		ship.setyPos(15);
 		assertEquals(ship.getxPos(), 5);
@@ -26,7 +28,7 @@ public class ShipTest {
 
 	@Test
 	public void setGetBullet() {
-		Bullet bullet = new Bullet(10,10);
+		Bullet bullet = new Bullet(10,10,"up");
 		ship.setxPos(5);
 		ship.setyPos(15);
 		assertEquals(ship.getxPos(), 5);
