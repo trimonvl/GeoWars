@@ -109,7 +109,7 @@ public class SinglePlayerMenu extends MenuInterface {
     }// </editor-fold>//GEN-END:initComponents
 
     private void arcadeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcadeButtonActionPerformed
-        layout.show(parent, "game");
+        layout.show(parent, "Game");
     }//GEN-LAST:event_arcadeButtonActionPerformed
 
     private void highscoresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoresButtonActionPerformed

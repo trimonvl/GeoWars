@@ -1,7 +1,7 @@
 package be.howest.groep12.geowars.main;
 
-import be.howest.groep12.geowars.view.GameInterface;
 import be.howest.groep12.geowars.Settings.SettingsModel;
+import be.howest.groep12.geowars.view.MainFrame;
 
 /**
  *
@@ -9,7 +9,8 @@ import be.howest.groep12.geowars.Settings.SettingsModel;
  */
 public class GeowarsLoader {
     
-    private GameInterface mainFrame;
+    //private GameInterface mainFrame;
+    private MainFrame frame;
     private SettingsModel settings;
     private static GeowarsLoader game;
 
@@ -26,7 +27,8 @@ public class GeowarsLoader {
     
     public GeowarsLoader() {
         settings = SettingsModel.getSettings();
-        mainFrame = new GameInterface(settings);
+        //mainFrame = new GameInterface(settings);
+        frame = new MainFrame();
     }
     
 }

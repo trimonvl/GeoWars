@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package be.howest.groep12.geowars.view;
+package be.howest.groep12.geowars.gui;
 
-import be.howest.groep12.geowars.Settings.SettingsModel;
-import be.howest.groep12.geowars.view.menu.CampaignMenu;
-import be.howest.groep12.geowars.view.menu.MultiPlayerMenu;
-import be.howest.groep12.geowars.view.menu.SettingsMenu;
-import be.howest.groep12.geowars.view.menu.SinglePlayerMenu;
-import be.howest.groep12.geowars.view.menu.TitleMenu;
-import be.howest.groep12.geowars.view.game.GamePanel;
+import be.howest.groep12.geowars.gui.gamemenu.CampaignMenu;
+import be.howest.groep12.geowars.gui.gamemenu.MultiPlayerMenu;
+import be.howest.groep12.geowars.gui.gamemenu.SettingsMenu;
+import be.howest.groep12.geowars.gui.gamemenu.SinglePlayerMenu;
+import be.howest.groep12.geowars.gui.gamemenu.TempGameScreen;
+import be.howest.groep12.geowars.gui.gamemenu.TitleMenu;
 import java.awt.*;
 import javax.swing.*;
 
@@ -33,11 +32,18 @@ import javax.swing.*;
 //      the contentpane.... and added in the preparingInteface method.
 public class GameInterface {
     
-    private SettingsModel settings;
+    private Container contentPane;
+    private CardLayout layout;
     
-    public GameInterface(SettingsModel settings) {
-        this.settings = settings;
+    public GameInterface() {
         prepareInterface();
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        GameInterface gameInterface = new GameInterface();
     }
     
     private void prepareInterface() {
@@ -47,26 +53,23 @@ public class GameInterface {
         root.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         root.setAlwaysOnTop(true);
         root.setResizable(false);
-        root.setBounds(root.getBounds());
         root.setVisible(true);
         
         //set the contentpane and it's layout
-        Container contentPane = root.getContentPane();
-        CardLayout layout = new CardLayout();
+        contentPane = root.getContentPane();
+        layout = new CardLayout();
         contentPane.setLayout(layout);
         
-        //add all the views we will have in the game
-        contentPane.add(new GamePanel(settings), "game");
-        contentPane.add(new TitleMenu(contentPane, layout, settings),"TitleMenu");
-        contentPane.add(new SinglePlayerMenu(contentPane, layout, settings), "SinglePlayerMenu");
-        contentPane.add(new MultiPlayerMenu(contentPane, layout, settings), "MultiPlayerMenu");
-        contentPane.add(new CampaignMenu(contentPane, layout, settings), "CampaignMenu");
-        contentPane.add(new SettingsMenu(contentPane, layout, settings), "SettingsMenu");
-        
+        //add all the views we will have in the game.
+        contentPane.add(new TitleMenu(contentPane, layout),"TitleMenu");
+        contentPane.add(new SinglePlayerMenu(contentPane, layout), "SinglePlayerMenu");
+        contentPane.add(new MultiPlayerMenu(contentPane, layout), "MultiPlayerMenu");
+        contentPane.add(new CampaignMenu(contentPane, layout), "CampaignMenu");
+        contentPane.add(new SettingsMenu(contentPane, layout), "SettingsMenu");
+        contentPane.add(new TempGameScreen(contentPane, layout), "Game");
         //display default view.
-        layout.show(contentPane, "TitleMenu");
-        root.pack();
+        layout.show(contentPane, "LoginMenu");
+        contentPane.setFocusable(true);
         contentPane.setVisible(true);
-        
     }
 }
