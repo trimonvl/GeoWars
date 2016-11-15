@@ -64,6 +64,11 @@ public class TempGameScreen extends javax.swing.JPanel implements KeyListener {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -130,6 +135,13 @@ public class TempGameScreen extends javax.swing.JPanel implements KeyListener {
     private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
         
     }//GEN-LAST:event_formKeyTyped
+
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        int[] coords = e.getPlayerPos();
+        double angle = Math.toDegrees(Math.atan2(evt.getX()-coords[0], evt.getY()-coords[1]));
+        e.setPlayerAngle(e.getAngle()+1);
+        this.repaint();
+    }//GEN-LAST:event_formMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

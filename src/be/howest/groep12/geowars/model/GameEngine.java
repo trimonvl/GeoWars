@@ -32,6 +32,15 @@ public class GameEngine {
        ship.setyPos(ship.getyPos()+y);
    }
    
+   public void setPlayerAngle(double angle) {
+       ship.setAngle(angle);
+   }
+   
+   //test for angle
+   public double getAngle() {
+       return ship.getAngle();
+   }
+   
    //test for playerpos
    public int[] getPlayerPos() {
        int[] coord = new int[2];
