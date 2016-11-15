@@ -1,22 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package be.howest.groep12.geowars.model;
 
 import java.awt.Graphics;
-/**
- *
- * @author Jonas Lauwers
- */
-public class Enemy {
+
+public class Bullet {
 	private int xPos;
 	private int yPos;
+	private String Direction;
 
-	public Enemy(int xPos, int yPos) {
+	public Bullet(int xPos, int yPos,String Direction) {
 		this.xPos = xPos;
 		this.yPos = yPos;
+		this.Direction = Direction;
 	}
 	public int getxPos() {
 		return xPos;
@@ -30,9 +24,15 @@ public class Enemy {
 	public void setyPos(int yPos) {
 		this.yPos = yPos;
 	}
+	public String getDirection() {
+		return Direction;
+	}
+	public void setDirection(String direction) {
+		Direction = direction;
+	}
 	public void draw(Graphics g){
-		int width = 10;
-		int height = 10;
-		g.fillRect(xPos, yPos, width, height);
+		int width = 5;
+		int height = 5;
+		g.fillOval(xPos, yPos, width, height);
 	}
 }
