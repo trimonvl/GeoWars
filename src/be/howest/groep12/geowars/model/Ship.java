@@ -54,7 +54,9 @@ public class Ship {
 		int nPoints = 3;
 		g.fillPolygon(xPoints, yPoints, nPoints);
 	}
+        
+        //TODO make draw bullet right in front of ship.
 	public void shoot(BulletList bulletList){
-		bulletList.add(new Bullet(xPos,yPos,"UP"));
+		bulletList.add(new Bullet(xPos,yPos-20,"UP"));
 	}
 }
