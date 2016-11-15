@@ -111,7 +111,7 @@ public class SinglePlayerMenu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void arcadeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcadeButtonActionPerformed
-        // TODO add your handling code here:
+        layout.show(parent, "Game");
     }//GEN-LAST:event_arcadeButtonActionPerformed
 
     private void highscoresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoresButtonActionPerformed
