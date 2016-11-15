@@ -94,7 +94,7 @@ public class Ship {
         
         private void translateShip(int xPos, int yPos) {
             AffineTransform.getTranslateInstance(xPos, yPos).transform(original,0,original,0,original.length);
-            makePoly(original);
+            rotateShip();
         }
 
 	public void addDrones(Drone drone) {
