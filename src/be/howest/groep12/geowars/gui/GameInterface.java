@@ -71,9 +71,5 @@ public class GameInterface {
         layout.show(contentPane, "LoginMenu");
         contentPane.setFocusable(true);
         contentPane.setVisible(true);
-        root.pack();
-        root.setVisible(true);
-        
-        
     }
 }

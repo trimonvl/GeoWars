@@ -5,6 +5,7 @@
  */
 package be.howest.groep12.geowars.gui.gamemenu;
 
+import be.howest.groep12.geowars.model.Enemy;
 import be.howest.groep12.geowars.model.GameEngine;
 import be.howest.groep12.geowars.model.Ship;
 import java.awt.CardLayout;
@@ -32,7 +33,7 @@ public class TempGameScreen extends javax.swing.JPanel implements KeyListener {
         this.layout = layout;
         initComponents();
         e = new GameEngine(new Ship(150, 150));
-        addKeyListener(this);
+        e.addEnemy(new Enemy(600,250));
         parent.addKeyListener(this);
     }
     
@@ -156,16 +157,16 @@ public class TempGameScreen extends javax.swing.JPanel implements KeyListener {
         char key = evt.getKeyChar();
         switch(key){
             case 'w':
-                e.movePlayer(0, -1);
+                e.movePlayer(0, -2);
                 break;
             case 's':
-                e.movePlayer(0, 1);
+                e.movePlayer(0, 2);
                 break;
             case 'a':
-                e.movePlayer(-1, 0);
+                e.movePlayer(-2, 0);
                 break;
             case 'd':
-                e.movePlayer(1, 0);
+                e.movePlayer(2, 0);
                 break;
         }
         this.repaint();

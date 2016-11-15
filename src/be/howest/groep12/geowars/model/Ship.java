@@ -56,7 +56,6 @@ public class Ship {
 
 	public void setxPos(int xPos) {
                 translateShip(xPos-this.xPos, 0);
-                //pol.translate(xPos-this.xPos, 0);
 		this.xPos = xPos;
 	}
 
@@ -66,7 +65,6 @@ public class Ship {
 
 	public void setyPos(int yPos) {
                 translateShip(0, yPos-this.yPos);
-                //pol.translate(0, yPos-this.yPos);
 		this.yPos = yPos;
 	}
         
@@ -87,7 +85,6 @@ public class Ship {
             temp[1] = new Point(xPos-10, yPos+10);
             temp[2] = new Point(xPos+10, yPos+10);
             
-            //change temp to original to turn and move at same time :) really funny :D
             AffineTransform.getRotateInstance(Math.toRadians(angle),xPos, yPos).transform(original, 0, temp, 0, original.length);
             makePoly(temp);
         }
