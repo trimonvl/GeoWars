@@ -13,6 +13,7 @@ import be.howest.groep12.geowars.gui.gamemenu.TempGameScreen;
 import be.howest.groep12.geowars.gui.gamemenu.TitleMenu;
 import java.awt.*;
 import javax.swing.*;
+import be.howest.groep12.geowars.gui.gamemenu.tempPlayScreen;
 
 /**
  *
@@ -66,7 +67,8 @@ public class GameInterface {
         contentPane.add(new MultiPlayerMenu(contentPane, layout), "MultiPlayerMenu");
         contentPane.add(new CampaignMenu(contentPane, layout), "CampaignMenu");
         contentPane.add(new SettingsMenu(contentPane, layout), "SettingsMenu");
-        contentPane.add(new TempGameScreen(contentPane, layout), "Game");
+        //contentPane.add(new TempGameScreen(contentPane, layout), "Game");
+        contentPane.add(new tempPlayScreen(), "Game");
         //display default view.
         layout.show(contentPane, "LoginMenu");
         contentPane.setFocusable(true);

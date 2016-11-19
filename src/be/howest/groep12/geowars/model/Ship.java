@@ -8,6 +8,8 @@ package be.howest.groep12.geowars.model;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Polygon;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,21 +18,25 @@ import java.util.List;
  *
  * @author Jonas Lauwers
  */
-public class Ship {
+public class Ship implements KeyListener {
 
 	private final List<Drone> drones;
 	private int xPos;
 	private int yPos;
+        private int xMov;
+        private int yMov;
         private double angle;
         private Polygon pol;
         private Point[] original;
         private Point[] current;
+        private boolean shooting;
 
 	public Ship(int xPos, int yPos) {
 		drones = new ArrayList<>();
 		this.xPos = xPos;
 		this.yPos = yPos;
                 this.angle = 0;
+                this.shooting = false;
                 pol = new Polygon();
                 
                 //temp?
@@ -67,6 +73,26 @@ public class Ship {
                 translateShip(0, yPos-this.yPos);
 		this.yPos = yPos;
 	}
+        
+        public void move(BulletList shots) {
+            setxPos(this.xPos+xMov);
+            setyPos(this.yPos+yMov);
+            if(shooting) {
+                shoot(shots);
+            }
+        }
+        
+        public void setxMov(int xmov) {
+            this.xMov = xmov;
+        }
+        
+        public void setyMov(int ymov) {
+            this.yMov = ymov;
+        }
+        
+        public void setShooting(boolean shoots) {
+            this.shooting = shoots;
+        }
         
         public void setAngle(double angle) {
             this.angle = angle;
@@ -109,4 +135,42 @@ public class Ship {
 	public void shoot(BulletList bulletList){
 		bulletList.add(new Bullet(pol.xpoints[0],pol.ypoints[0],"UP"));
 	}
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+        if(key==KeyEvent.VK_W) {
+            setyMov(-2);
+        }
+        if(key==KeyEvent.VK_S) {
+            setyMov(2);
+        }
+        if(key==KeyEvent.VK_A) {
+            setxMov(-2);
+        }
+        if(key==KeyEvent.VK_D) {
+            setxMov(2);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        int key = e.getKeyCode();
+        if(key==KeyEvent.VK_W) {
+            setyMov(0);
+        }
+        if(key==KeyEvent.VK_S) {
+            setyMov(0);
+        }
+        if(key==KeyEvent.VK_A) {
+            setxMov(0);
+        }
+        if(key==KeyEvent.VK_D) {
+            setxMov(0);
+        }
+    }
 }

@@ -30,6 +30,22 @@ public class Bullet {
 	public void setDirection(String direction) {
 		Direction = direction;
 	}
+        public void move() {
+            switch(Direction) {
+                case "UP":
+                    yPos--;
+                    break;
+                case "DOWN":
+                    yPos++;
+                    break;
+                case "LEFT":
+                    xPos--;
+                    break;
+                case "RIGHT":
+                    xPos++;
+                    break;
+            }
+        }
 	public void draw(Graphics g){
 		int width = 5;
 		int height = 5;

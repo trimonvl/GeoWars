@@ -16,9 +16,15 @@ public class BulletList {
             return bulletList.size();
         }
         
+        public void move() {
+            for(Bullet b : bulletList) {
+                b.move();
+            }
+        }
+        
 	public void draw(Graphics g){
-		for(int i=0;i<bulletList.size();i++){
-			bulletList.get(i).draw(g);
-		}
+            for(Bullet b : bulletList) {
+                b.draw(g);
+            }
 	}
 }
